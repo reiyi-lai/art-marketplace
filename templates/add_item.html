@@ -1,0 +1,72 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<h2>Add New Art Piece</h2>
+{% if success %}
+<div id="success-message" class="alert alert-success">
+  New item successfully created.
+  <a href="{{ url_for('view_item', item_id=new_item.id) }}" class="alert-link">See it here</a>
+  <!-- <a href="#" class="alert-link">See it here</a>. -->
+</div>
+{% endif %}
+<form method="POST" id="add-form">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ form_data.title or '' }}">
+    {% if errors.title %}<div class="text-danger">{{ errors.title }}</div>{% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="original_artist" class="form-label">Original Artist</label>
+    <input type="text" class="form-control" id="original_artist" name="original_artist" value="{{ form_data.original_artist or '' }}">
+    {% if errors.original_artist %}<div class="text-danger">{{ errors.original_artist }}</div>{% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="media_url" class="form-label">Media URL</label>
+    <input type="text" class="form-control" id="media_url" name="media_url" value="{{ form_data.media_url or '' }}">
+    {% if errors.media_url %}<div class="text-danger">{{ errors.media_url }}</div>{% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" name="description">{{ form_data.description or '' }}</textarea>
+    {% if errors.description %}<div class="text-danger">{{ errors.description }}</div>{% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="price" name="price" value="{{ form_data.price or '' }}">
+    {% if errors.price %}<div class="text-danger">{{ errors.price }}</div>{% endif %}
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Genres</label>
+    <div>
+      {% for genre in possible_genres %}
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="genres" value="{{ genre }}"
+          {% if form_data.genres and genre in form_data.genres %}checked{% endif %}>
+        <label class="form-check-label">{{ genre }}</label>
+      </div>
+      {% endfor %}
+    </div>
+    {% if errors.genres %}<div class="text-danger">{{ errors.genres }}</div>{% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- <script>
+  $(document).ready(function(){
+    // Focus on the first field that has an error
+    {% if errors.title %}
+        $('#title').focus();
+    {% elif errors.original_artist %}
+        $('#original_artist').focus();
+    {% elif errors.media_url %}
+        $('#media_url').focus();
+    {% elif errors.description %}
+        $('#description').focus();
+    {% elif errors.price %}
+        $('#price').focus();
+    {% endif %}
+  });
+  </script> -->
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS and JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Art Marketplace - Rei Yi Lai</a>
+            <form class="d-flex ms-auto" id="search-form" action="{{ url_for('search') }}" method="GET">
+                <input class="form-control me-2" type="search" id="search-input" name="query" placeholder="Search items" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Go</button>
+            </form>
+            <a class="btn btn-primary ms-2" href="{{ url_for('add_item') }}">Add Item</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+

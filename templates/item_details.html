@@ -1,0 +1,40 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<h2>{{ item.title }}</h2>
+<div class="row g-3">
+    <!-- Left Column: Image, Price, and Description -->
+    <div class="col-md-8">
+    <img src="{{ item.media_url }}" alt="{{ item.title }}" class="img-fluid float-start me-3 mb-3 item-image">
+    <h5 class="item-price"><strong>${{ "%.2f"|format(item.price) }}</strong></h5>
+    <p class="item-price"> {{ item.description }}</p>
+    </div>
+    <!-- Right Column: Genres, Original Artist -->
+    <div class="col-md-4 mt-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h6>Genres</h6>
+                <p>
+                {% for genre in item.genres %}
+                    <span class="genre-tag">{{ genre }}</span>
+                {% endfor %}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h6>Original Artist</h6>
+                <h5><strong>{{ item.original_artist }}</strong></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="actions-row">
+    <a class="light" href="{{ url_for('edit_item', item_id=item.id) }}">Edit</a>
+    {% if next_item %}
+    <a class="btn btn-outline-primary" href="{{ url_for('view_item', item_id=next_item.id) }}">Next Item</a>
+    {% endif %}
+</div>
+
+{% endblock %}

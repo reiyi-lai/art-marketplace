@@ -1,0 +1,105 @@
+:root {
+    --base-color: #06367e;
+    --accent-color: #0d6efd;
+    --light-grey: #ecf0f1;
+    --dark-grey: #7f8c8d;
+  }
+  
+  body {
+    /* font-family: Arial, sans-serif; */
+    /* background-color: var(--light-grey); */
+    color: var(--base-color);
+  }
+
+  .light {
+    color: var(--dark-grey);
+    /* margin: 20px; */
+  }
+  
+  .navbar {
+    background-color: var(--base-color) !important;
+  }
+  
+  .navbar .navbar-brand,
+  .navbar {
+    color: var(--light-grey) !important;
+  }
+  
+  .btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
+  .btn-outline-primary {
+    background-color: white;
+    border-color: var(--accent-color);
+    color: var(--base-color);
+  }
+
+  .actions-row {
+    display: flex;           
+    justify-content: center;  
+    align-items: center;     
+    gap: 1.5rem;                
+    margin: 1rem;         
+  }
+  
+  .jumbotron {
+    background-color: var(--light-grey);
+    color: var(--accent-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .genre-tag {
+    background-color: var(--accent-color);
+    color: #fff; /* or any suitable text color */
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.2rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+
+  .popular-image {
+    width: 100%;
+    height: 200px;      
+    object-fit: cover;
+  }
+  
+  .banner-image {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .item-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .alert-success {
+    color: var(--base-color);
+    background-color: var(--light-grey);
+    border-color: var(--accent-color);
+  }
+
+  .alert-success .alert-link {
+    color: var(--accent-color);
+  }
+  
+  /* Highlight matched text */
+  .highlight {
+    background-color: var(--base-color);
+    color: #fff;
+    padding: 0 2px;
+  }
+  
+  .text-danger {
+    font-size: 0.9rem;
+  }
