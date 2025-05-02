@@ -25,7 +25,7 @@ pip install Flask
 python3 server.py
 ``` 
 
-The app will be available at: http://127.0.0.1:5001
+The app will be available at: 127.0.0.1:5001
 
 ## Project Structure
 
