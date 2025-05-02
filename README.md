@@ -1,8 +1,6 @@
-# Art Gallery Web App
+# Art Marketplace Web App
 
-A simple Flask-based web application to browse, add, and search artwork items.
-
-## Demo
+A Flask-based web application to browse, add, and search artwork items.
 
 <p align="center">
     <a href="https://youtu.be/0JqHv9J5On4">
@@ -10,7 +8,7 @@ A simple Flask-based web application to browse, add, and search artwork items.
     </a>
 </p>
 
-## Prerequisites
+## Requirements
 
 - Python 3.x
 - Flask
@@ -27,7 +25,7 @@ pip install Flask
 python3 server.py
 ``` 
 
-Open your browser and visit `http://127.0.0.1:5001`
+The app will be available at: http://127.0.0.1:5001
 
 ## Project Structure
 
