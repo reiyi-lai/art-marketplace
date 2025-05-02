@@ -4,7 +4,7 @@ A Flask-based web application to browse, add, and search artwork items.
 
 <p align="center">
     <a href="https://youtu.be/0JqHv9J5On4">
-        <img src="images/screenshot.png" alt="ArtMarket Screenshot" width="70%"/>
+        <img src="images/screenshot.png" alt="ArtMarket Screenshot" width="85%"/>
     </a>
 </p>
 
